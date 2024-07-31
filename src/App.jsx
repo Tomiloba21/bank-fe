@@ -42,6 +42,8 @@ const App = () => (
           <Testimonials/>
          
           <Clients/>
+
+          <CTA />
        
           <Footer/> 
 
