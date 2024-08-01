@@ -26,12 +26,13 @@ export const Footer = () =>  (
             {footerlink.title}
               
             </h4>
-            <ul>
+            <ul className="list-none mt-4">
               {footerlink.links.map((link, index)=>(
                   <li key={link.name} className={`font-poppins font-normal
                   
                   text-[16px] leading-[24px] text-dimWhite 
-                  hover:text-secondary cursor-pointeri`}>
+                  hover:text-secondary cursor-pointer
+                  ${index!== footerlink.links.length -1 ? 'mb-4': 'mb-0'}`}>
                     {link.name}
                   </li>
 
@@ -45,6 +46,28 @@ export const Footer = () =>  (
 
       </div>
 
+
+      <div  className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3f3r45]  ">
+        <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-white ">
+          2021 HooBank. All Rights Reserved
+
+        </p>
+
+        <div className="flex flex-row md:mt-0 mt-6">
+
+          {socialMedia.map((social, index)=>(
+            <img 
+              key={social.id}
+              src={social.icon}
+              alt={social.id}
+              className={`${index !== socialMedia.length -1? 'mr-6':'mr-0'} w-[21px] h-[21px] object-contain cursor-pointer `}
+
+            />
+          ))}
+
+        </div>
+        
+      </div>
   </section>
 
 
